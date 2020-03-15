@@ -8,7 +8,6 @@ namespace QFJH.Algorithm
 {
     /// <summary>
     /// 后方交汇
-    /// 本实现方法易于理解，算法效率一般
     /// </summary>
     public class BackMatch
     {
@@ -161,7 +160,6 @@ namespace QFJH.Algorithm
             int count = _existMatch.Count;
             double xs = 0, ys = 0;
 
-            //TODO: 何为四个角上的控制点，直接取所有的可不可以
             for (int i = 0; i < count; i++)
             {
                 xs += _existMatch[i]["x"];
@@ -211,7 +209,6 @@ namespace QFJH.Algorithm
         {
             Matrix mergeA = MergeMatrix(aMat), mergeL = MergeMatrix(lMat);
 
-            // 变量名看书上公式就懂
             var AT = MatrixOperation.MatrixTrans(mergeA);
             var final = (1 / (AT * mergeA)) * AT * mergeL;
 
@@ -281,7 +278,7 @@ namespace QFJH.Algorithm
         }
 
         /// <summary>
-        /// 共线方程X,Y解算，其中分母均为z
+        /// 共线方程X,Y解算
         /// </summary>
         private void GXFC(Matrix r, double[] x, double[] y, double[] z)
         {
